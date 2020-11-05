@@ -17,9 +17,9 @@ body {
 </head>
 
 <body>
-<form action="/search/" method="post">
-    <label for="restaurant">Find Restaurant: </label>
-    <input id="restaurant" type="text" name="restaurant" value="">
+<form action="" method="POST">{% csrf_token %}
+    <label for="location">Location: </label>
+    <input id="location" type="text" name="location" value="">
     <input type="submit" value="Search">
 </form>
 <body>
