@@ -1,34 +1,12 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from dotenv import load_dotenv
-import os
-import requests
 import json
 
 # Create your views here.
 
 from .forms import RestaurantForm
 
-load_dotenv()
-
-YELP_KEY = str(os.getenv('YELP_KEY'))
-
-
-def YELP_GET(input):
-
-	location = input['location']
-
-	url_params = {'location': location }
-
-	url = "https://api.yelp.com/v3/businesses/search"
-
-	headers = {'Authorization': 'Bearer %s' % YELP_KEY,}
-
-	response = requests.request('GET', url, headers=headers, params=url_params)
-
-	print(response.json())
-
-
+from .functions import YELP_GET
 
 def API_caller(request):
 
