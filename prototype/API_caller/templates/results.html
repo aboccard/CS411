@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Popular Businesses</title>
+</head>
+<body>
+
+	Popular Businesses in {{location}}:
+
+	<br>
+
+	<ul>
+	{% for key, value in results.items %}
+    	<li><a>{{value}}</a></li>
+	{% endfor %}
+	</ul>
+
+</body>
+</html>

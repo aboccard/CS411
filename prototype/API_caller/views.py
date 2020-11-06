@@ -4,22 +4,24 @@ import json
 
 # Create your views here.
 
-from .forms import RestaurantForm
+from .forms import LocationForm
 
 from .functions import YELP_GET
 
 def API_caller(request):
 
 	if request.method == "POST":
-		form = RestaurantForm(request.POST)
+		form = LocationForm(request.POST)
 
 		if form.is_valid():
 
-			YELP_GET(form.cleaned_data)
+			location = form.cleaned_data['location']
 
-			form = RestaurantForm()
+			results = YELP_GET(location)
 
-	else:
-		form = RestaurantForm()
+			return render(request, 'results.html', {'location': location, 'results': results})
+
+
+	form = LocationForm()
 
 	return render(request, 'API_caller.html', {'form': form})

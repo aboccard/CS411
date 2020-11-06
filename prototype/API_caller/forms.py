@@ -1,4 +1,4 @@
 from django import forms
 
-class RestaurantForm(forms.Form):
+class LocationForm(forms.Form):
     location = forms.CharField(label='Location:', max_length=100)
