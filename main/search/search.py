@@ -1,13 +1,11 @@
-from GOOGLE import findRatioLocation
+from .GOOGLE import findRatioLocation
 
-from YELP import YELP_SEARCH
+from .YELP import YELP_SEARCH
 
-def search(loc1, loc2, ratio = 0.5, radius = 4828, price = None):
+def searchBusiness(loc1, loc2, ratio = 0.5, radius = 4828, price = None):
 
 	searchLocation = findRatioLocation(loc1, loc2, ratio)
 
 	yelpResults = YELP_SEARCH(searchLocation[0], searchLocation[1], radius, price)
 
 	return yelpResults["businesses"]
-
-

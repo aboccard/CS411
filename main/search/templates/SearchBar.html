@@ -19,31 +19,31 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
       <h2><i class="fa fa-search w3-margin-right"></i>Search</h2>
     </div>
     <div class="w3-container w3-white w3-padding-16">
-      <form action="/action_page.php" target="_blank">
+      <form action="" method="POST"> {% csrf_token %}
         <div class="w3-row-padding" style="margin:0 -16px;">
           <div class="w3-half w3-margin-bottom">
-            <label><i class="fa fa-male"></i> Add a Friend</label>
-            <input class= "w3-input w3-border" type="text" placeholder="Name">   
+            <label for="location1"><i class="fa fa-male"></i> Location 1</label>
+            <input class= "w3-input w3-border" type="text" placeholder="Enter First Location" name="location1" required>   
           </div>
         </div>
         <div class="w3-row-padding" style="margin:8px -16px;">
           <div class="w3-half w3-margin-bottom">
-            <label><i class="fa fa-cloud"></i> Radius</label>
-            <input class="w3-input w3-border" type="text" placeholder="Miles" min="1" max="100" required>
+            <label for="radius"><i class="fa fa-cloud"></i> Radius</label>
+            <input class="w3-input w3-border" type="number" placeholder="Enter Radius in Miles" name ="radius" min="0" max="24.8" required>
           </div>
           <div class="w3-half">
-            <label><i class="fa fa-search"></i> Ratio</label>
-            <input class="w3-input w3-border" type="text" placeholder="Enter Location">
+            <label for="ratio"><i class="fa fa-search"></i> Ratio</label>
+            <input class="w3-input w3-border" type="number" placeholder="Enter Ratio Percentage for Distance From Location 1" name ="ratio" min="0" max="100" required>
           </div>
         </div>
         <div class="w3-row-padding" style="margin:16px -16px;">
           <div class="w3-half w3-margin-bottom">
-            <label><i class="fa fa-search"></i> Adults</label>
-            <input class="w3-input w3-border" type="number" placeholder="ex) 10:90" min="1" max= "100"required>
+            <label for="location2"><i class="fa fa-man"></i> Location 2</label>
+            <input class="w3-input w3-border" type="text" placeholder="Enter Second Location" name="location2" required>
           </div>
           <div class="w3-half">
-            <label><i class="fa fa-money"></i> Kids</label>
-          <input class="w3-input w3-border" type="number" placeholder = "$$$$" min="0">
+            <label for="budget"><i class="fa fa-money"></i> Budget</label>
+          <input class="w3-input w3-border" type="number" placeholder = "In USD" min="0" name="budget" required>
           </div>
         </div>
         <button class="w3-button w3-dark-grey" type="submit"><i class="fa fa-search w3-margin-right"></i> Search availability</button>

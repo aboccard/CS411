@@ -5,24 +5,42 @@ from django.http import HttpResponseRedirect
 
 from .forms import LocationForm
 
-from .search import search
+from .search import searchBusiness
 
 def search(request):
-    
-    if request.method == "POST":
+
+	if request.method == "POST":
+
 		form = LocationForm(request.POST)
 
 		if form.is_valid():
 
 			location1 = form.cleaned_data['location1']
-            location2= form.cleaned_data['location2']
-            ratio= form.cleaned_data['ratio']
-            radius= form.cleaned_data['radius']
-            budget = form.cleaned_data['budget']
+			location2= form.cleaned_data['location2']
+			ratio= form.cleaned_data['ratio'] / 100
+			radius= form.cleaned_data['radius'] * 1610
+			budget = form.cleaned_data['budget']
 
-			results = search(location1, location2, ratio = ratio, radius= radius, price = budget)
+			if (budget < 10):
+				budgetStr = "1"
 
-			return render(request, 'results.html', {'location': location, 'results': results})
+			elif (budget < 30):
+				budgetStr = "1, 2"
+
+			elif (budget < 60):
+				budgetStr = "1, 2, 3"
+
+			else:
+				budgetStr = "1, 2, 3, 4"
+
+			results = searchBusiness(location1, location2, ratio = ratio, radius= radius, price = budgetStr)
+
+			resultList = []
+
+			for keys in results:
+				resultList.append(keys['name'])
+
+			return render(request, 'results.html', {'results': resultList})
 
 
 	form = LocationForm()
