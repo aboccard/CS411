@@ -33,4 +33,3 @@ def findRatioLocation(loc1, loc2, ratio):
 
 
 
-
