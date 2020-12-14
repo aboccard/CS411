@@ -14,7 +14,7 @@ def search(request):
 		form = LocationForm(request.POST)
 
 		if form.is_valid():
-
+			
 			location1 = form.cleaned_data['location1']
 			location2= form.cleaned_data['location2']
 			ratio= form.cleaned_data['ratio'] / 100
