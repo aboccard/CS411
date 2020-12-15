@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'search',
     'django.contrib.sites',
+    'login'
 
 
 
