@@ -1,3 +1,5 @@
+{% load socialaccount %}
+{% providers_media_js %}
 <!DOCTYPE html>
 <html>
 <title>W3.CSS Template</title>
@@ -14,8 +16,7 @@ p {line-height: 2}
   background-position: center;
   background-size: cover;
 }
-.bgimg {background-image: url("/w3images/wedding_couple.jpg")}
-.bgimg2 {background-image: url("/w3images/flowers.jpg")}
+
 </style>
 <body>
 
@@ -56,8 +57,8 @@ p {line-height: 2}
         <form action="/action_page.php">
           <div class="row">
             <div class="col">
-              <a href="#" class="fb btn" style="text-align:center">
-                <i class="fa fa-facebook fa-fw" style="text-align:center"></i> Login with Facebook
+              <a href= "{% provider_login_url "facebook" method="oauth2" %}" class="fb btn" style="text-align:center">
+                <i class="fa fa-facebook fa-fw" style="text-align:center"></i><p>Login with Facebook</p>
                </a>
             </div>          
           </div>
