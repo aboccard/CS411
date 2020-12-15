@@ -35,23 +35,10 @@ def search(request):
 
 			results = searchBusiness(location1, location2, ratio = ratio, radius= radius, price = budgetStr)
 
-			# can we make
-			nameList = []
-			phoneList=[]
-			urlList=[]
-
-			for keys in results:
-				nameList.append(keys['name'])
-
-			for keys in results:
-				phoneList.append(keys['phone'])
-
-			for keys in results:
-				urlList.append(keys['url'])
-
-			return render(request, 'results.html', {'names': nameList, 'phones': phoneList, 'urls': urlList})
+		
+			return render(request, 'results_final.html', {'results': results})
 
 
 	form = LocationForm()
 
-	return render(request, 'Final.html', {'form': form})
+	return render(request, 'Search.html', {'form': form})
