@@ -1,3 +1,5 @@
+{% load socialaccount %}
+{% providers_media_js %}
 <!DOCTYPE html>
 <html>
 <title>W3.CSS Template</title>
@@ -14,8 +16,7 @@ p {line-height: 2}
   background-position: center;
   background-size: cover;
 }
-.bgimg {background-image: url("/w3images/wedding_couple.jpg")}
-.bgimg2 {background-image: url("/w3images/flowers.jpg")}
+
 </style>
 <body>
 
@@ -33,6 +34,12 @@ p {line-height: 2}
     body,h1 {font-family: "Montserrat"}
     img {margin-bottom: -7px}
     .w3-row-padding img {margin-bottom: 12px}
+
+          /* add appropriate colors to fb, twitter and google buttons */
+      .fb {
+        background-color: #3B5998;
+        color: white;
+      }
     </style>
     <body>
     
@@ -45,6 +52,18 @@ p {line-height: 2}
     <header class="w3-center w3-margin-bottom">
       <h1><b>MEET ME HALFWAY.</b></h1>
       <p><b>Onto your next adventure!</b></p>
+
+      <div class="container">
+        <form action="/action_page.php">
+          <div class="row">
+            <div class="col">
+              <a href= "{% provider_login_url "facebook" method="oauth2" %}" class="fb btn" style="text-align:center">
+                <i class="fa fa-facebook fa-fw" style="text-align:center"></i><p>Login with Facebook</p>
+               </a>
+            </div>          
+          </div>
+        </form>
+      </div>
       <p class="w3-padding-16"></p>
     </header>
     </div>
@@ -71,15 +90,6 @@ p {line-height: 2}
   <!-- End Page Content -->
   </div>
 </header>
-
-<!-- Navbar (sticky bottom) -->
-<div class="w3-bottom w3-hide-small">
-  <div class="w3-bar w3-black w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
-    <a href="#Home" style="width:33.3%" class="w3-bar-item w3-button">Home</a>
-    <a href="#Search" style="width:33.3%" class="w3-bar-item w3-button">Search</a>
-    <a href="#Profile" style="width:33.3%" class="w3-bar-item w3-button">Profile</a>
-  </div>
-</div>
 
   <br>
 
