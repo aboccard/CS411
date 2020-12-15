@@ -54,7 +54,7 @@ p {line-height: 2}
         <h2><i class="fa fa-search w3-margin-right"></i>Search</h2>
       </div>
       <div class="w3-container w3-white">
-        <form action="" method="POST">
+        <form action="" method="POST">{% csrf_token %}
           <div class="w3-row-padding">
             <style>
               * {
@@ -84,7 +84,7 @@ p {line-height: 2}
                 </div>
                   <div class="column">
                     <label for="ratio"><i class="fa fa-cloud"></i> Location 2</label>
-                    <input class="w3-input w3-border" type="number" placeholder="Enter First Location" name="location2" required>
+                    <input class="w3-input w3-border" type="text" placeholder="Enter Second Location" name="location2" required>
                   </div>
                 </div>
               <div class="row">

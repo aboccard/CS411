@@ -49,18 +49,18 @@ p {line-height: 2}
   <header class="w3-container w3-content" style="max-width:1500px; background-color: #fbf3d4; border:1px gray;">
     <div class="w3-container " style="max-width:1500px; background-color: #fbf3d4; border:1px gray;">
       {% for result in results %}
-      <h4><strong>result.name</strong></h4>
+      <h4><strong>{{result.name}}</strong></h4>
       <div class="w3-row w3-large">
         <div class="w3-col s6">
-          <p><i class="fa fa-fw fa-map-pin"></i> result.location.address1</p>
-          <p><i class="fa fa-fw"></i> result.location.city</p>
-          <p><i class="fa fa-fw"></i> result.location.country</p>
-          <p><i class="fa fa-fw"></i> result.location.zip_code</p>
-          <p><i class="fa fa-fw fa-star"></i> result.rating</p>
+          <p><i class="fa fa-fw fa-map-pin"></i> {{result.location.address1}}</p>
+          <p><i class="fa fa-fw"></i> {{result.location.city}}</p>
+          <p><i class="fa fa-fw"></i> {{result.location.country}}</p>
+          <p><i class="fa fa-fw"></i> {{result.location.zip_code}}</p>
+          <p><i class="fa fa-fw fa-star"></i> {{result.rating}}</p>
         </div>
         <div class="w3-col s6">
-          <p><i class="fa fa-fw fa-globe"></i> <a href = result.url>Website</a></p>
-          <p><i class="fa fa-fw fa-phone"></i> result.phone</p>
+          <p><i class="fa fa-fw fa-globe"></i> <a href = {{result.url}}>Website</a></p>
+          <p><i class="fa fa-fw fa-phone"></i> {{result.phone}}</p>
         </div>
       </div>
       <hr>
