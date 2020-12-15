@@ -60,7 +60,8 @@ p {line-height: 2}
         </div>
         <div class="w3-col s6">
           <p><i class="fa fa-fw fa-globe"></i> <a href = {{result.url}}>Website</a></p>
-          <p><i class="fa fa-fw fa-phone"></i> {{result.phone}}</p>
+          <p><i class="fa fa-fw fa-phone"></i> <a href="tel:{{result.phone}}">{{result.phone}}</a></p>
+          <p><i class="fa fa-fw fa-money"></i> {{result.price}}</p>
         </div>
       </div>
       <hr>
