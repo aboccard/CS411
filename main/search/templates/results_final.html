@@ -51,19 +51,19 @@ p {line-height: 2}
       {% for result in results %}
       <h4><strong>{{result.name}}</strong></h4>
       <div class="w3-row w3-large">
-        <div class="w3-col s6">
+        <div class="w3-col s3">
           <p><i class="fa fa-fw fa-map-pin"></i> {{result.location.address1}}</p>
           <p><i class="fa fa-fw"></i> {{result.location.city}}</p>
           <p><i class="fa fa-fw"></i> {{result.location.state}}, {{result.location.zip_code}}</p>
           <p><i class="fa fa-fw"></i> {{result.location.country}}</p>
         </div>
-        <div class="w3-col s6">
+        <div class="w3-col s3">
           <p><i class="fa fa-fw fa-globe"></i> <a href = {{result.url}}>Website</a></p>
           <p><i class="fa fa-fw fa-phone"></i> <a href="tel:{{result.phone}}">{{result.phone}}</a></p>
           <p><i class="fa fa-fw fa-star"></i> {{result.rating}}</p>
           <p><i class="fa fa-fw fa-money"></i> {{result.price}}</p>
         </div>
-        <div class="w3-col s6">
+        <div class="w3-col s3">
           <img src={{result.image_url}} style="width:50%" class="w3-margin-bottom">
         </div>
       </div>
