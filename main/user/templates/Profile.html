@@ -1,0 +1,301 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat"}
+body, html {height: 100%}
+p {line-height: 2}
+.bgimg, .bgimg2 {
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.bgimg {background-image: url("/w3images/wedding_couple.jpg")}
+.bgimg2 {background-image: url("/w3images/flowers.jpg")}
+</style>
+<body>
+<!-- Navbar (sticky bottom) -->
+<div class="w3-bottom w3-hide-small">
+  <div class="w3-bar w3-black w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
+    <a href="#Home" style="width:33.3%" class="w3-bar-item w3-button">Home</a>
+    <a href="#Search" style="width:33.3%" class="w3-bar-item w3-button">Search</a>
+    <a href="#Profile" style="width:33.3%" class="w3-bar-item w3-button">Profile</a>
+  </div>
+</div>
+
+<!-- Profile -->
+<div class="w3-container w3-padding-64 w3-center w3-wide " style = "background-color: #fbf3d4" id = "Profile">
+  <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
+    <!-- The Grid -->
+    <div class="w3-row">
+      <!-- Left Column -->
+      <div class="w3-col m3">
+        <!-- Profile -->
+        <div class="w3-card w3-round w3-white">
+          <div class="w3-container">
+           <h4 class="w3-center">My Profile</h4>
+           <p class="w3-center"><img src="{% static 'images/profile pic.jpg' %}" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+           <hr>
+           <h3><i class="fa-fw w3-margin-right w3-text-theme" style = "font-size: 20;"></i><b></b>Perry Donham</b></h3>
+           <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> Boston, Massachussetts</p>
+           <p><i class="fa fa-book fa-fw w3-margin-right w3-text-theme"></i> Bio</p>
+          </div>
+        </div>
+        <br>
+        
+        <!-- Accordion -->
+        <div class="w3-card w3-round">
+          <div class="w3-white">
+            <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> Past Journeys</button>
+              <div id="Demo1" class="w3-hide w3-container">
+                <p><u>Allston :: South End</u></p>
+                <p><u>Allston :: North End</u></p>
+                <p><u>Manhattan :: Brooklyn</u></p>
+              </div>
+            <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-map fa-fw w3-margin-right"></i> Saved Locations </button>
+              <div id="Demo2" class="w3-hide w3-container">
+                <div class="w3-row-padding">
+                <br>
+                  <div class="w3-half">
+                    <img src="{% static 'images/sample.jpg' %}" style="width:100%" class="w3-margin-bottom">
+                    <p>Landwer</p>
+                  </div>
+                  <div class="w3-half">
+                    <img src="{% static 'images/sample.jpg' %}" style="width:100%" class="w3-margin-bottom">
+                    <p>Gyu Kaku</p>
+                  </div>
+                  <div class="w3-half">
+                    <img src="{% static 'images/sample.jpg' %}" style="width:100%" class="w3-margin-bottom">
+                    <p>Cava</p>
+                  </div>
+                  <div class="w3-half">
+                    <img src="{% static 'images/sample.jpg' %}" style="width:100%" class="w3-margin-bottom">
+                    <p>Nud Pob</p>
+                  </div>
+                </div>
+              </div>
+           <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i>My Friends</button>
+            <div id="Demo3" class="w3-hide w3-container">
+              <div class="w3-row-padding">
+                <br>
+                <div class="w3-half">
+                  <img src="{% static 'images/sample.jpg' %}" style="width:100%" class="w3-margin-bottom">
+                  <p>Monica Chen</p>
+                </div>
+                <div class="w3-half">
+                  <img src="{% static 'images/sample.jpg' %}" style="width:100%" class="w3-margin-bottom">
+                  <p>Jana Aguilar</p>
+                </div>
+                <div class="w3-half">
+                  <img src="{% static 'images/sample.jpg' %}" style="width:100%" class="w3-margin-bottom">
+                  <p>Justin Ching</p>
+                </div>
+                <div class="w3-half">
+                  <img src="{% static 'images/sample.jpg' %}" style="width:100%" class="w3-margin-bottom">
+                  <p>Alex </p>
+                </div>
+                <div class="w3-half">
+                  <img src="{% static 'images/sample.jpg' %}" style="width:100%" class="w3-margin-bottom">
+                  <p>Kendall Casteñada </p>
+                </div>
+              </div>
+            </div>
+          </div>      
+        </div>
+        <br>
+        
+        <!-- Interests --> 
+        <div class="w3-card w3-round w3-white w3-hide-small">
+          <div class="w3-container">
+            <p>Interests</p>
+            <p>
+              <span class="w3-tag w3-small w3-theme-d5">News</span>
+              <span class="w3-tag w3-small w3-theme-d4">Software</span>
+              <span class="w3-tag w3-small w3-theme-d3">Labels</span>
+              <span class="w3-tag w3-small w3-theme-d2">Games</span>
+              <span class="w3-tag w3-small w3-theme-d1">Friends</span>
+              <span class="w3-tag w3-small w3-theme">Coding</span>
+              <span class="w3-tag w3-small w3-theme-l1">Friends</span>
+              <span class="w3-tag w3-small w3-theme-l2">Food</span>
+              <span class="w3-tag w3-small w3-theme-l3">Design</span>
+              <span class="w3-tag w3-small w3-theme-l4">Art</span>
+              <span class="w3-tag w3-small w3-theme-l5">Photos</span>
+            </p>
+          </div>
+        </div>
+        <br>
+        
+      <!-- End Left Column -->
+      </div>
+      
+      <!-- Middle Column -->
+      <div class="w3-col m7">
+
+
+        <div class="w3-row-padding">
+          <div class="w3-col m10">
+            <div class="w3-card w3-round w3-white">
+              <div class="w3-container">
+                <head>
+                  <style>
+                  div.gallery {
+                    margin: 3px;
+                    border: 1px solid #ccc;
+                    float: left;
+                    width: 180px;
+                  }
+                  
+                  div.gallery:hover {
+                    border: 1px solid #777;
+                  }
+                  
+                  div.gallery img {
+                    width: 100%;
+                    height: 200px;
+                  }
+                  
+                  div.desc {
+                    padding: 10px;
+                    text-align: center;
+                  }
+                  </style>
+                  </head>
+                  <body>
+                  
+                  <div class="gallery">
+                    <a target="_blank" href="Images/venice.jpg">
+                      <img src="{% static 'images/venice.jpg' %}" alt="Cinque Terre" width="1000" height="1000">
+                    </a>
+                    <div class="desc">Explore ✨ </div>
+                  </div>
+                  
+                  <div class="gallery">
+                    <a target="_blank" href="Images/bike.jpg">
+                      <img src="{% static 'images/bike.jpg' %}" alt="Forest" width="1000" height="1000">
+                    </a>
+                    <div class="desc"> Day trip 🌸</div>
+                  </div>
+                  
+                  <div class="gallery">
+                    <a target="_blank" href="Images/home3.jpg">
+                      <img src="{% static 'images/indonesia.jpg' %}" alt="Northern Lights" width="1000" height="1000">
+                    </a>
+                    <div class="desc">Travels ✈️ </div>
+                  </div>
+                  
+                  <div class="gallery">
+                    <a target="_blank" href="Images/sfo.jpg">
+                      <img src="{% static 'images/sfo.jpg' %}" alt="Mountains" width="1000" height="1000">
+                    </a>
+                    <div class="desc">Views 🏙 </div>
+                  </div>
+
+                  <div class="gallery">
+                    <a target="_blank" href="Images/home6.jpg">
+                      <img src="{% static 'images/plane.jpg' %}" alt="Mountains" width="1000" height="1000">
+                    </a>
+                    <div class="desc"> Getaway </div>
+                  </div>
+
+                  <div class="gallery">
+                    <a target="_blank" href="Images/boats.jpg">
+                      <img src="{% static 'images/boats.jpg' %}" alt="Mountains" width="1000" height="1000">
+                    </a>
+                    <div class="desc"> 🤍 </div>
+                  </div>
+
+                  
+                  </body>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- End Middle Column -->
+      
+      <!-- Right Column -->
+      <div class="w3-col m2">
+        <div class="w3-card w3-round w3-white w3-center">
+          <div class="w3-container">
+            <p>Upcoming Journeys:</p>
+            <p><strong>Lunch with Mike</strong></p>
+            <p>Friday 15:00</p>
+            <p><button class="w3-buttonw3-gray w3-block w3-theme-l4">Details</button></p>
+          </div>
+        </div>
+        <br>
+        
+        <div class="w3-card w3-round w3-white w3-center">
+          <div class="w3-container">
+            <p>Friend Request</p>
+            <img src="{% static 'images/pexels-haley-black-2087391.jpg' %}" alt="Avatar" style="width:50%"><br>
+            <p></p>
+            <span>Emily Kim</span>
+            <div class="w3-row w3-opacity">
+              <div class="w3-half">
+                <button class="w3-button w3-block w3-green w3-section" title="Accept"><i class="fa fa-check"></i></button>
+              </div>
+              <div class="w3-half">
+                <button class="w3-button w3-block w3-red w3-section" title="Decline"><i class="fa fa-remove"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <div class="w3-card w3-round w3-white w3-center">
+          <div class="w3-container">
+            <p>Journey Request from:</p>
+            <img src="{% static 'images/pexels-archie-binamira-672358.jpg' %}" alt="Avatar" style="width:50%"><br>
+            <p></p>
+            <span>Josh Smith</span>
+            <div class="w3-row w3-opacity">
+              <div class="w3-half">
+                <button class="w3-button w3-block w3-green w3-section" title="Accept"><i class="fa fa-check"></i></button>
+              </div>
+              <div class="w3-half">
+                <button class="w3-button w3-block w3-red w3-section" title="Decline"><i class="fa fa-remove"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        
+      <!-- End Right Column -->
+      </div>
+      
+    <!-- End Grid -->
+    </div>
+    
+  <!-- End Page Container -->
+  </div>
+  <br>
+
+
+  <script>
+  // Accordion
+  
+  function myFunction(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+      x.previousElementSibling.className += " w3-theme-d1";
+    } else { 
+      x.className = x.className.replace("w3-show", "");
+      x.previousElementSibling.className = 
+      x.previousElementSibling.className.replace(" w3-theme-d1", "");
+    }
+  }
+  </script>
+  </body>
+</div>
+
+
+
+</body>
+</html>

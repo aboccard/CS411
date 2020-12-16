@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'search',
     'django.contrib.sites',
     'login',
+    'user'
 
 
 
